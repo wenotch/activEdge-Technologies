@@ -1,6 +1,8 @@
 const initialState = {
   isLoggedIn: false,
   loading: false,
+  allArtists: [],
+  allAlbum: [],
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -18,6 +20,12 @@ export const userReducer = (state = initialState, action) => {
       };
     case "LOGOUT":
       return { state: initialState };
+
+    case "ARTISTS_LIST":
+      return { ...state, allArtists: action.payload };
+
+    case "ALL_ALBUM":
+      return { ...state, allAlbum: action.payload };
 
     default:
       return state;

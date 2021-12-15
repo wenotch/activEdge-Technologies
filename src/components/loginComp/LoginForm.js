@@ -44,7 +44,7 @@ function LoginForm() {
     setTimeout(() => {
       dispatch({ type: "LOGGED_IN", payload: true });
       navigate("/dashboard");
-    }, 3000);
+    }, 1000);
   };
 
   //handle password visibility
@@ -162,8 +162,9 @@ function LoginForm() {
                 </Text>
               </Checkbox>
               <Link
-                as={NavLink}
-                to="/forgot-password"
+                onClick={() => {
+                  alert("try dey calm down abeg😂");
+                }}
                 _hover={{ color: "brand.texts", textDecoration: "none" }}
                 fontSize="14px"
                 color="brand.yellow"

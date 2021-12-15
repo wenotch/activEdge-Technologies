@@ -1,6 +1,6 @@
 import { Box, Image } from "@chakra-ui/react";
 import React from "react";
-import authImage from "../../assets/auth-image.svg";
+import authImage from "../../assets/music.svg";
 import logo from "../../assets/logo.svg";
 
 function LeftBox() {
@@ -26,7 +26,7 @@ function LeftBox() {
       <Image
         src={authImage}
         w="100%"
-        mt="100px"
+        mt="250px"
         maxH="100%"
         alt="illustration of the cryptocurrencies"
       />

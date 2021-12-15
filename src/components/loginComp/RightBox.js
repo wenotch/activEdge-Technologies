@@ -2,7 +2,7 @@ import { Box, Flex, Link, Text, Image } from "@chakra-ui/react";
 import React from "react";
 import LoginForm from "./LoginForm";
 import logo from "../../assets/logo.svg";
-import darkLogo from "../../assets/dark-logo.png"; 
+import darkLogo from "../../assets/dark-logo.png";
 
 function RightBoxLogin() {
   return (
@@ -72,7 +72,7 @@ function Header() {
         {" "}
         <Link
           onClick={() => {
-            alert("try dey calm down 😂");
+            alert("try dey calm down abeg😂");
           }}
         >
           <Text

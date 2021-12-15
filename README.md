@@ -1,4 +1,4 @@
-# Chocolate City - Music to your soul 
+### Chocolate City - Music to your soul 
 
 A web based react web application created using ReactJS and Chakra Ui lets get started. 
 
@@ -6,7 +6,7 @@ A web based react web application created using ReactJS and Chakra Ui lets get s
 
 1. yarn install or npm install to install all project dependency.
 
-### `npm start or yarn start`
+## `npm start or yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.

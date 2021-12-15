@@ -1,18 +1,31 @@
-# Chocolate 
+# Chocolate City - Music to your soul 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web based react web application created using ReactJS and Chakra Ui lets get started. 
 
-## Available Scripts
+## How to run the application
 
-In the project directory, you can run:
+1. yarn install or npm install to install all project dependency.
 
-### `npm start`
+### `npm start or yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## Major tools
+
+1. Reactjs (create-react-app) as core frontend framework
+2. Chakra-Ui (component library to speed up react development) 
+3. Redux -- for state management. introduced in this project to demonstrate my ability to work with redux and redux thunk.
+3. axios for api calls
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------\
+a copy of react readme
 
 ### `npm test`
 

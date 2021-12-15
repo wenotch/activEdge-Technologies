@@ -1,9 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
-import { Box } from "@chakra-ui/react";
+import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
 
 function App() {
-  return <Box>Chololate city studio</Box>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigate to={"/login"} />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

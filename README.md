@@ -1,6 +1,6 @@
-### Chocolate City - Music to your soul 
+### Chocolate City - Music to your soul
 
-A web based react web application created using ReactJS and Chakra Ui lets get started. 
+A web based react web application created using ReactJS and Chakra Ui lets get started.
 
 ## How to run the application
 
@@ -17,12 +17,10 @@ You may also see any lint errors in the console.
 ## Major tools
 
 1. Reactjs (create-react-app) as core frontend framework
-2. Chakra-Ui (component library to speed up react development) 
+2. Chakra-Ui (component library to speed up react development)
 3. Redux -- for state management. introduced in this project to demonstrate my ability to work with redux and redux thunk.
-3. axios for api calls
-
-
-
+4. axios for api calls
+5. react-router-dom v6 for routing
 
 -----------------------------------------------------------------------------------------------------------------------------\
 a copy of react readme

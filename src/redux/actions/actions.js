@@ -73,3 +73,21 @@ export const createTweet = (data) => {
     }
   };
 };
+
+// delete tweet
+export const deleteTweet = (id) => {
+  return async (dispatch, getState) => {
+    const options = {
+      url: baseUrl + "/comments/" + id,
+      method: "delete",
+    };
+
+    try {
+      const response = await axios(options);
+      toast.success("Tweet deleted");
+      dispatch({ type: "NOT_LOADING" });
+    } catch {
+      toast.error("Something went wrong");
+    }
+  };
+};

@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { validateField } from "../lib/validations";
 import { Field, Form, Formik } from "formik";
-import { createTweet } from "../../redux/actions/actions";
+import { createTweet, deleteTweet } from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 function Tweets(artistTweets, artist) {
@@ -136,7 +136,31 @@ function Tweets(artistTweets, artist) {
                 <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
                   {artist.name}
                 </Heading>
-                <Stack direction={"row"} align={"center"}></Stack>
+                <Stack
+                  direction={"row"}
+                  w="full"
+                  align={"center"}
+                  justifyContent={"space-between"}
+                >
+                  <Button
+                    colorScheme={"blue"}
+                    bg="#04435F"
+                    size={"sm"}
+                    w="70px"
+                  >
+                    Edit
+                  </Button>{" "}
+                  <Button
+                    colorScheme={"red"}
+                    size={"sm"}
+                    w="70px"
+                    onClick={() => {
+                      dispatch(deleteTweet(tweets.id));
+                    }}
+                  >
+                    Delete
+                  </Button>
+                </Stack>
               </Stack>
             </Box>
           </Center>

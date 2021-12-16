@@ -15,10 +15,12 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
+import Album from "./Albums";
 import Header from "./Header";
 
 function ArtistDetails({ artist, album }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const artistAlbum = album.filter((album) => album.userId === artist.id);
   return (
     <>
       <Button
@@ -35,8 +37,20 @@ function ArtistDetails({ artist, album }) {
         <ModalOverlay />
         <ModalContent>
           <Header />{" "}
-          <ModalHeader px={{ base: "18px", md: "100px" }}>
-            {artist.name}'s Details
+          <ModalHeader
+            pos={"sticky"}
+            top={0}
+            zIndex={2}
+            bg="white"
+            display={"flex"}
+            justifyContent={"space-between"}
+            alignItems={"center"}
+            px={{ base: "18px", md: "100px" }}
+          >
+            <Text> {artist.name}'s Details </Text>
+            <Button color="white" bg="brand.yellow" onClick={onClose}>
+              Back
+            </Button>
           </ModalHeader>
           <ModalBody px={{ base: "18px", md: "100px" }}>
             <Text>Name: {artist.name}</Text>
@@ -52,7 +66,7 @@ function ArtistDetails({ artist, album }) {
 
               <TabPanels>
                 <TabPanel>
-                  <p>one!</p>
+                  <Album artistAlbum={artistAlbum} artist={artist} />
                 </TabPanel>
                 <TabPanel>
                   <p>two!</p>

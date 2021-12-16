@@ -19,7 +19,7 @@ export const userReducer = (state = initialState, action) => {
         loading: true,
       };
     case "LOGOUT":
-      return { state: initialState };
+      return initialState;
 
     case "ARTISTS_LIST":
       return { ...state, allArtists: action.payload };

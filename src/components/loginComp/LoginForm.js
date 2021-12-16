@@ -18,7 +18,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineEye } from "react-icons/ai";
 import { BsEyeSlash } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { validateEmail, validatePassword } from "../lib/validations";
 
 function LoginForm() {
@@ -36,6 +36,8 @@ function LoginForm() {
     if (isLoggedIn === true) {
       navigate("/dashboard");
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn]);
 
   //handle form submission

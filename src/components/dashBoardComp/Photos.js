@@ -58,8 +58,7 @@ function Photos({ id }) {
             justifyContent={"space-between"}
             alignItems={"center"}
             px={{ base: "18px", md: "100px" }}
-          >
-            {/* <Text> {artist.name}'s Details </Text> */}
+          > 
             <Button color="white" bg="brand.yellow" onClick={onClose}>
               Back
             </Button>

@@ -17,10 +17,13 @@ import {
 import React from "react";
 import Album from "./Albums";
 import Header from "./Header";
+import Tweets from "./Tweets";
 
-function ArtistDetails({ artist, album }) {
+function ArtistDetails({ artist, album, tweets }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const artistAlbum = album.filter((album) => album.userId === artist.id);
+  const artistTweets = tweets.filter((tweet) => tweet.postId === artist.id);
+  console.log(artistTweets);
   return (
     <>
       <Button
@@ -69,7 +72,7 @@ function ArtistDetails({ artist, album }) {
                   <Album artistAlbum={artistAlbum} artist={artist} />
                 </TabPanel>
                 <TabPanel>
-                  <p>two!</p>
+                  <Tweets artistTweets={artistTweets} />
                 </TabPanel>
               </TabPanels>
             </Tabs>

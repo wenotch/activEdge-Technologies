@@ -3,6 +3,7 @@ const initialState = {
   loading: false,
   allArtists: [],
   allAlbum: [],
+  allTweets: [],
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -13,11 +14,19 @@ export const userReducer = (state = initialState, action) => {
         isLoggedIn: action.payload,
         loading: false,
       };
+
     case "LOADING":
       return {
         ...state,
         loading: true,
       };
+
+    case "NOT_LOADING":
+      return {
+        ...state,
+        loading: false,
+      };
+
     case "LOGOUT":
       return initialState;
 
@@ -26,6 +35,8 @@ export const userReducer = (state = initialState, action) => {
 
     case "ALL_ALBUM":
       return { ...state, allAlbum: action.payload };
+    case "TWEETS":
+      return { ...state, allTweets: action.payload };
 
     default:
       return state;

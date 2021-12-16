@@ -14,7 +14,11 @@ import {
 } from "@chakra-ui/react";
 import { validateField } from "../lib/validations";
 import { Field, Form, Formik } from "formik";
-import { createTweet, deleteTweet } from "../../redux/actions/actions";
+import {
+  createTweet,
+  deleteTweet,
+  editTweet,
+} from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 function Tweets(artistTweets, artist) {
@@ -27,10 +31,19 @@ function Tweets(artistTweets, artist) {
   //toggle create tweet form
   const [show, setShow] = React.useState(false);
 
-  //handle form submission
+  //toggle edit tweet form
+  const [edit, setEdit] = React.useState(false);
+
+  //handle create submit
   const handleSubmit = async (values, actions) => {
     dispatch({ type: "LOADING" });
     dispatch(createTweet(values.body));
+  };
+
+  //handle delete submit
+  const handleSubmitTwo = async (values, actions) => {
+    dispatch({ type: "LOADING" });
+    dispatch(editTweet(values.body));
   };
 
   return (
@@ -136,6 +149,70 @@ function Tweets(artistTweets, artist) {
                 <Heading fontSize={"2xl"} fontFamily={"body"} fontWeight={500}>
                   {artist.name}
                 </Heading>
+
+                {edit && (
+                  <Box mx="auto" w={{ base: "100%" }}>
+                    <Formik
+                      initialValues={{ body: "" }}
+                      onSubmit={handleSubmitTwo}
+                    >
+                      {(props) => (
+                        <Form>
+                          <Field name="body" validate={validateField}>
+                            {({ field, form }) => (
+                              <FormControl
+                                isInvalid={
+                                  form.errors.body && form.touched.body
+                                }
+                              >
+                                <FormLabel
+                                  mt="28px"
+                                  htmlFor="body"
+                                  color="#B1B5C3"
+                                  fontSize="12px"
+                                  fontFamily="DM Sans"
+                                >
+                                  Body
+                                </FormLabel>
+                                <Input
+                                  {...field}
+                                  id="body"
+                                  placeholder="Enter tweet"
+                                  borderRadius="10px"
+                                  color="#777E90"
+                                  _placeholder={{ color: "#777E90" }}
+                                  h="48px"
+                                  fontFamily="DM Sans"
+                                  border="2px solid #E6E8EC !important"
+                                />
+                                <FormErrorMessage>
+                                  {form.errors.body}
+                                </FormErrorMessage>
+                              </FormControl>
+                            )}
+                          </Field>
+
+                          <Button
+                            mt={4}
+                            isLoading={loading}
+                            type="submit"
+                            h="28px"
+                            w="70px"
+                            mx="auto"
+                            bg="brand.yellow"
+                            color="white"
+                            fontFamily="DM Sans"
+                            _hover={{
+                              bg: "#04435F",
+                            }}
+                          >
+                            Edit Tweet
+                          </Button>
+                        </Form>
+                      )}
+                    </Formik>
+                  </Box>
+                )}
                 <Stack
                   direction={"row"}
                   w="full"
@@ -147,6 +224,9 @@ function Tweets(artistTweets, artist) {
                     bg="#04435F"
                     size={"sm"}
                     w="70px"
+                    onClick={() => {
+                      setEdit(!edit);
+                    }}
                   >
                     Edit
                   </Button>{" "}

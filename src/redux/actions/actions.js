@@ -70,6 +70,7 @@ export const createTweet = (data) => {
       dispatch({ type: "NOT_LOADING" });
     } catch {
       toast.error("Something went wrong");
+      dispatch({ type: "NOT_LOADING" });
     }
   };
 };
@@ -88,6 +89,26 @@ export const deleteTweet = (id) => {
       dispatch({ type: "NOT_LOADING" });
     } catch {
       toast.error("Something went wrong");
+      dispatch({ type: "NOT_LOADING" });
+    }
+  };
+};
+
+// edit tweet
+export const editTweet = (id) => {
+  return async (dispatch, getState) => {
+    const options = {
+      url: baseUrl + "/comments/" + id,
+      method: "put",
+    };
+
+    try {
+      const response = await axios(options);
+      toast.success("Tweet edited");
+      dispatch({ type: "NOT_LOADING" });
+    } catch {
+      toast.error("Something went wrong");
+      dispatch({ type: "NOT_LOADING" });
     }
   };
 };

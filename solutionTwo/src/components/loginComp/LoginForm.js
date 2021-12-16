@@ -20,6 +20,7 @@ import { BsEyeSlash } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { validateEmail, validatePassword } from "../lib/validations";
+import toast from "react-hot-toast";
 
 function LoginForm() {
   //react-router for navigation
@@ -35,6 +36,7 @@ function LoginForm() {
   useEffect(() => {
     if (isLoggedIn === true) {
       navigate("/dashboard");
+      toast.success("You are logged in!");
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

@@ -1,12 +1,6 @@
-### Folders and their content
+### Chocolate City - Music to your soul
 
-1. solutionOne -- this folder contains solution to the first excercise. Kindly do the following. <br />
-   i. put in your desired array into the function <br />
-   ii. run "node index.js" (you must have node installed on your system)<br />
-
-2. solutionTwo -- contains solution to the second excercise called chocolate city<br />
-
-A web based react web application created using ReactJS and Chakra Ui lets get started.<br />
+A web based react web application created using ReactJS and Chakra Ui lets get started.
 
 ## How to run the application
 
